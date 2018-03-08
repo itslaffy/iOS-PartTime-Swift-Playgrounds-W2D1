@@ -20,6 +20,9 @@ func sayHello() {
 //sayHello()
 
 //: The power of writing a function is that we can now repeat this code whenever we want. Feel free to call `sayHello` a few times below:
+sayHello()
+sayHello()
+sayHello()
 
 //: Now our `sayHello` function is pretty cool, but we might want to say hello to a specific person.
 //: Functions can take one or more "parameters" or inputs, and do something with that input. Take this example function:
@@ -28,6 +31,7 @@ func greet(name: String) {
     print("Ah! Hello, \(name)")
 }
 
+greet(name: "somename")
 //: This is a function that takes a single `String` as a parameter, and uses it to greet someone by name.
 
 //: ### Challenge 1
@@ -35,48 +39,79 @@ func greet(name: String) {
 //: Try to call this function with your name, so it greets you.
 //:
 //: Hint: put your name, wrapped in quotes, between the parentheses `()`.
+//var name = "Liam"
+//
+//func greet() {
+//    print("Ah! Hello, \(name)")
+//}
 
-
-
+greet(name: "Liam")
+greet(name: "John")
 
 //: ### Challenge 2
 //:
 //: Now take the code your wrote in the last playground to print out a grammatical description of our bicycleCount, and write a function that takes in an Int representing how many bicycles we have, and prints out a description of how many bicycles we have. You can call the function `pluralize`.
+//var bicycleCount = 100
+
+//bicycleCount = 1
 
 
-
+func pluralize(bicycleCount: Int) {
+    
+        print("There is \(bicycleCount) bicycle")
+    } else if bicycleCount == 0 {
+        print("There are zero bicycles")
+    } else {
+        print("There are \(bicycleCount) bicycles")
+    }
+}
 
 // Test it by uncommenting these lines:
 
-// pluralize(bicycleCount: 1)
-// pluralize(bicycleCount: 0)
-// pluralize(bicycleCount: 100)
-
+pluralize(bicycleCount: 1)
+pluralize(bicycleCount: 0)
+pluralize(bicycleCount: 100)
 //: Not only can functions take in parameters, but they can return values. So far we've only written functions that don't return anything, they just print stuff. Here is an example of a function that takes in an Int and returns an Int
 
-func increment(input: Int) -> Int {
-    let newValue = input + 1
-    return newValue
-}
 
-var result = increment(input: 10)
 
 // In this example the returned Int is stored inside the variable `result`.
-
 
 //: ### Challenge 3
 //:
 //: Using the `increment` function as an example, re-write the `pluralize` function (call it `pluralizedString`) so it returns a String instead of printing.
 
 
+func pluralizedString(bicycleCount: Int) -> String {
+    
+    if bicycleCount == 1 {
+        return "There is \(bicycleCount) bicycle"
+    } else if bicycleCount == 0 {
+        return "There are zero bicycles"
+    } else {
+        return "There are \(bicycleCount) bicycles"
+    }
+    
+}
 
-
+var increasedValue = increment(input: 3)
+var result2 = pluralizedString(bicycleCount: increasedValue)
+var anotherResult = result2 + " Some end string"
 
 // Test it by uncommenting the lines below:
 
-//var str1 = pluralizedString(bicycleCount: 1)
-//var str2 = pluralizedString(bicycleCount: 0)
-//var str3 = pluralizedString(bicycleCount: 100)
+var str1 = pluralizedString(bicycleCount: 1)
+var str2 = pluralizedString(bicycleCount: 0)
+var str3 = pluralizedString(bicycleCount: 100)
+
+
+
+func increment (input: Int) -> Int {
+    let newvalue3 = input + 2
+    return newvalue3
+}
+
+var result5 = increment(input: 5)
 
 
 //: ## Bonus Challenge
